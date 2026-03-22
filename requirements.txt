@@ -1,18 +1,14 @@
-# Streamlit Community Cloud + shared inference stack (no FastAPI — avoids heavy / conflicting deps)
+# Streamlit Community Cloud: keep this file minimal — heavy ML deps are in requirements-ml.txt
+# (avoids long source builds / resolver failures on new Python versions).
 # API / Render: pip install -r requirements-api.txt
 # Training: pip install -r requirements-training.txt
-# Install first so PEP 517 builds (pandas, etc.) have setuptools/pkg_resources in edge environments.
 setuptools>=69.0.0
 wheel>=0.42.0
+protobuf>=3.20,<6
 streamlit==1.40.2
 plotly==5.24.1
-pandas==2.2.3
-numpy==1.26.4
-scikit-learn==1.5.2
-xgboost==2.1.3
-pydantic==2.10.3
-pydantic-settings==2.6.1
+pandas>=2.2.3,<3
+numpy>=1.26.4,<2
 httpx==0.28.1
-holidays==0.61
-loguru==0.7.3
-pyarrow==17.0.0
+pydantic>=2.10,<3
+pydantic-settings>=2.6,<3

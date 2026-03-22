@@ -1,5 +1,6 @@
 # Training, notebooks, tests (install after base; includes API deps for pytest)
 -r requirements.txt
+-r requirements-ml.txt
 fastapi==0.115.6
 uvicorn[standard]==0.32.1
 python-multipart==0.0.17

@@ -51,6 +51,7 @@ Ferry operations to Toronto Island Park need **short-horizon** forecasts (15 min
 ├── logs/
 ├── tests/
 ├── requirements.txt
+├── requirements-ml.txt
 ├── requirements-api.txt
 ├── requirements-training.txt
 ├── runtime.txt
@@ -67,6 +68,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-training.txt
 # Or UI-only: pip install -r requirements.txt
+# Or UI + local ML export: pip install -r requirements.txt -r requirements-ml.txt
 # Or API-only: pip install -r requirements-api.txt
 # macOS XGBoost may require: brew install libomp
 cp .env.example .env
@@ -78,7 +80,7 @@ export SKIP_SARIMA=1   # if pmdarima import fails on your platform
 python scripts/train_all.py
 ```
 
-**Streamlit Community Cloud:** installs root `requirements.txt` only (no FastAPI stack — fewer pip conflicts). **Python version is chosen in the deploy dialog:** click **Advanced settings** and select **Python 3.12** or **3.11** (avoid **3.13+** / preview builds). Community Cloud does **not** use `runtime.txt` for Python—that file is for other hosts (e.g. Heroku). If the app was deployed with a too-new Python, wheels for `pandas` may be missing, installs fall back to building from source, and you can see `ModuleNotFoundError: pkg_resources` or long `pip install` failures; **delete the app and redeploy** with Python 3.12 (you cannot change Python after deploy). No `packages.txt`. Train models locally; `.pkl` files stay gitignored by default. **Render / FastAPI:** `pip install -r requirements-api.txt` (see `render.yaml`).
+**Streamlit Community Cloud:** installs root **`requirements.txt` only** — intentionally **light** (Streamlit, Plotly, pandas, httpx, Pydantic; **no** scikit-learn/xgboost/pyarrow). Heavy ML deps live in **`requirements-ml.txt`** and are used by Render (`requirements-api.txt`) and local training. **Python version:** in the deploy dialog → **Advanced settings** → choose **Python 3.12** or **3.11** (avoid preview Python releases). Community Cloud does **not** use `runtime.txt` for Python. If dependency install fails, **delete the app and redeploy** with Python 3.12 (Python cannot be changed after deploy). Set **`API_URL`** in **Secrets** so Live Forecast / Export call your Render API; export’s local fallback needs `pip install -r requirements-ml.txt` or the API. No `packages.txt`. Train models locally; `.pkl` files stay gitignored by default. **Render / FastAPI:** `pip install -r requirements-api.txt` (see `render.yaml`).
 
 Run API:
 

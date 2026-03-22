@@ -1,5 +1,6 @@
 # FastAPI backend (Render, or local: uvicorn backend.main:app)
 -r requirements.txt
+-r requirements-ml.txt
 fastapi==0.115.6
 uvicorn[standard]==0.32.1
 python-multipart==0.0.17

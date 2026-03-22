@@ -25,8 +25,15 @@ def api_base() -> str:
 def _local_export_df(model: str, horizon: str, n: int) -> pd.DataFrame:
     if str(ROOT) not in sys.path:
         sys.path.insert(0, str(ROOT))
-    from backend.services.forecaster import build_test_export_dataframe
-    from backend.utils.config import get_settings
+    try:
+        from backend.services.forecaster import build_test_export_dataframe
+        from backend.utils.config import get_settings
+    except ImportError as e:
+        raise RuntimeError(
+            "Local export needs the ML stack (scikit-learn, XGBoost). "
+            "On Streamlit Community Cloud, set API_URL in App settings → Secrets to your "
+            "deployed API URL, or install requirements-ml.txt for full local development."
+        ) from e
 
     s = get_settings()
     return build_test_export_dataframe(s.models_dir, s.data_path, model, horizon, n)
