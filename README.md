@@ -51,6 +51,8 @@ Ferry operations to Toronto Island Park need **short-horizon** forecasts (15 min
 ├── logs/
 ├── tests/
 ├── requirements.txt
+├── requirements-training.txt
+├── packages.txt
 ├── Procfile
 ├── render.yaml
 └── README.md
@@ -63,6 +65,7 @@ cd "/path/to/Short-Term Ferry Ticket Demand Forecasting & Predictive Decision Su
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+pip install -r requirements-training.txt
 # macOS XGBoost may require: brew install libomp
 cp .env.example .env
 # Ensure data path exists (already copied to data/ferry_tickets.csv in this repo)
@@ -72,6 +75,8 @@ export FERRY_TRAIN_MAX_ROWS=40000
 export SKIP_SARIMA=1   # if pmdarima import fails on your platform
 python scripts/train_all.py
 ```
+
+**Streamlit Community Cloud** uses the slim `requirements.txt` only (Prophet/pmdarima/SHAP are training-only and often break the cloud installer). `packages.txt` installs `libgomp1` for XGBoost on Linux. Train models locally; `.pkl` files stay gitignored by default.
 
 Run API:
 

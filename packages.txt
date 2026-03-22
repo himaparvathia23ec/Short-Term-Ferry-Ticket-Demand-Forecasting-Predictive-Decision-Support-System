@@ -1,0 +1,2 @@
+# System packages for Streamlit Cloud / Debian (OpenMP for XGBoost)
+libgomp1

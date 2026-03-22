@@ -1,0 +1,9 @@
+# Extra deps for scripts/train_all.py, notebooks, SHAP plots, tests (install after requirements.txt)
+-r requirements.txt
+prophet==1.1.6
+pmdarima==2.0.4
+shap==0.46.0
+pytest==8.3.4
+kaleido==0.2.1
+optuna==4.0.0
+matplotlib==3.9.3
