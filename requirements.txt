@@ -1,6 +1,9 @@
 # Streamlit Community Cloud + shared inference stack (no FastAPI — avoids heavy / conflicting deps)
 # API / Render: pip install -r requirements-api.txt
 # Training: pip install -r requirements-training.txt
+# Install first so PEP 517 builds (pandas, etc.) have setuptools/pkg_resources in edge environments.
+setuptools>=69.0.0
+wheel>=0.42.0
 streamlit==1.40.2
 plotly==5.24.1
 pandas==2.2.3

@@ -78,7 +78,7 @@ export SKIP_SARIMA=1   # if pmdarima import fails on your platform
 python scripts/train_all.py
 ```
 
-**Streamlit Community Cloud:** installs root `requirements.txt` only (no FastAPI stack — fewer pip conflicts). `runtime.txt` pins **Python 3.11**. No `packages.txt`. Train models locally; `.pkl` files stay gitignored by default. **Render / FastAPI:** `pip install -r requirements-api.txt` (see `render.yaml`).
+**Streamlit Community Cloud:** installs root `requirements.txt` only (no FastAPI stack — fewer pip conflicts). **Python version is chosen in the deploy dialog:** click **Advanced settings** and select **Python 3.12** or **3.11** (avoid **3.13+** / preview builds). Community Cloud does **not** use `runtime.txt` for Python—that file is for other hosts (e.g. Heroku). If the app was deployed with a too-new Python, wheels for `pandas` may be missing, installs fall back to building from source, and you can see `ModuleNotFoundError: pkg_resources` or long `pip install` failures; **delete the app and redeploy** with Python 3.12 (you cannot change Python after deploy). No `packages.txt`. Train models locally; `.pkl` files stay gitignored by default. **Render / FastAPI:** `pip install -r requirements-api.txt` (see `render.yaml`).
 
 Run API:
 
