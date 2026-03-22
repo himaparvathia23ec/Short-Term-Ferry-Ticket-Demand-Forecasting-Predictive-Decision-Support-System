@@ -1,0 +1,206 @@
+{
+  "naive": {
+    "sales_15min": {
+      "low_offset": -12.049999999999955,
+      "high_offset": 13.0
+    },
+    "redemption_15min": {
+      "low_offset": -15.0,
+      "high_offset": 14.0
+    },
+    "sales_30min": {
+      "low_offset": -13.0,
+      "high_offset": 13.0
+    },
+    "redemption_30min": {
+      "low_offset": -14.0,
+      "high_offset": 14.0
+    },
+    "sales_1hr": {
+      "low_offset": -14.0,
+      "high_offset": 13.0
+    },
+    "redemption_1hr": {
+      "low_offset": -13.0,
+      "high_offset": 13.0
+    },
+    "sales_2hr": {
+      "low_offset": -16.09999999999991,
+      "high_offset": 16.0
+    },
+    "redemption_2hr": {
+      "low_offset": -15.0,
+      "high_offset": 15.0
+    }
+  },
+  "moving_average_4": {
+    "sales_15min": {
+      "low_offset": -11.25,
+      "high_offset": 10.75
+    },
+    "redemption_15min": {
+      "low_offset": -12.0,
+      "high_offset": 11.25
+    },
+    "sales_30min": {
+      "low_offset": -12.0,
+      "high_offset": 11.25
+    },
+    "redemption_30min": {
+      "low_offset": -12.465384615384613,
+      "high_offset": 11.625
+    },
+    "sales_1hr": {
+      "low_offset": -13.25,
+      "high_offset": 12.75
+    },
+    "redemption_1hr": {
+      "low_offset": -13.75,
+      "high_offset": 12.75
+    },
+    "sales_2hr": {
+      "low_offset": -17.5,
+      "high_offset": 15.75
+    },
+    "redemption_2hr": {
+      "low_offset": -17.0,
+      "high_offset": 16.0
+    }
+  },
+  "linear_regression": {
+    "sales_15min": {
+      "low_offset": -11.14585611820221,
+      "high_offset": 9.922841739654544
+    },
+    "redemption_15min": {
+      "low_offset": -10.404366207122802,
+      "high_offset": 12.182307815551761
+    },
+    "sales_30min": {
+      "low_offset": -12.116473484039306,
+      "high_offset": 10.76700682640076
+    },
+    "redemption_30min": {
+      "low_offset": -11.331740379333494,
+      "high_offset": 12.886397171020509
+    },
+    "sales_1hr": {
+      "low_offset": -15.063636016845702,
+      "high_offset": 11.600593376159669
+    },
+    "redemption_1hr": {
+      "low_offset": -13.394833183288574,
+      "high_offset": 13.68232502937318
+    },
+    "sales_2hr": {
+      "low_offset": -20.037360382080077,
+      "high_offset": 12.509428119659434
+    },
+    "redemption_2hr": {
+      "low_offset": -18.866586303710935,
+      "high_offset": 14.749093627929689
+    }
+  },
+  "random_forest": {
+    "sales_15min": {
+      "low_offset": -12.821435588549521,
+      "high_offset": 7.895043728026781
+    },
+    "redemption_15min": {
+      "low_offset": -11.81979171920934,
+      "high_offset": 8.657928869204257
+    },
+    "sales_30min": {
+      "low_offset": -13.253730792016093,
+      "high_offset": 7.705689648032886
+    },
+    "redemption_30min": {
+      "low_offset": -12.01338753706909,
+      "high_offset": 8.646920564930289
+    },
+    "sales_1hr": {
+      "low_offset": -13.498262552244498,
+      "high_offset": 8.18737897117336
+    },
+    "redemption_1hr": {
+      "low_offset": -12.63162399338856,
+      "high_offset": 8.468014247251608
+    },
+    "sales_2hr": {
+      "low_offset": -14.27845627545113,
+      "high_offset": 9.282120287865627
+    },
+    "redemption_2hr": {
+      "low_offset": -13.757050405265845,
+      "high_offset": 9.01510591959448
+    }
+  },
+  "gradient_boosting": {
+    "sales_15min": {
+      "low_offset": -11.391260251688587,
+      "high_offset": 8.57869830247753
+    },
+    "redemption_15min": {
+      "low_offset": -10.687259585595193,
+      "high_offset": 10.318978043062476
+    },
+    "sales_30min": {
+      "low_offset": -11.575741191131765,
+      "high_offset": 8.541725702465554
+    },
+    "redemption_30min": {
+      "low_offset": -11.020422462064596,
+      "high_offset": 10.328518764640183
+    },
+    "sales_1hr": {
+      "low_offset": -12.745627469718068,
+      "high_offset": 8.889283384565122
+    },
+    "redemption_1hr": {
+      "low_offset": -11.975664849664733,
+      "high_offset": 10.132221277101069
+    },
+    "sales_2hr": {
+      "low_offset": -15.372432759549318,
+      "high_offset": 9.239322061057525
+    },
+    "redemption_2hr": {
+      "low_offset": -15.781817210795099,
+      "high_offset": 10.087503835599337
+    }
+  },
+  "xgboost": {
+    "sales_15min": {
+      "low_offset": -11.95936164855957,
+      "high_offset": 7.890246295928955
+    },
+    "redemption_15min": {
+      "low_offset": -10.609757232666015,
+      "high_offset": 9.291754055023194
+    },
+    "sales_30min": {
+      "low_offset": -11.998707389831543,
+      "high_offset": 7.900367927551277
+    },
+    "redemption_30min": {
+      "low_offset": -11.677036857604978,
+      "high_offset": 8.77697777748108
+    },
+    "sales_1hr": {
+      "low_offset": -11.771311950683593,
+      "high_offset": 8.08478136062622
+    },
+    "redemption_1hr": {
+      "low_offset": -11.966112518310544,
+      "high_offset": 8.539132165908821
+    },
+    "sales_2hr": {
+      "low_offset": -12.94159698486328,
+      "high_offset": 8.788249111175539
+    },
+    "redemption_2hr": {
+      "low_offset": -12.481801033020014,
+      "high_offset": 8.868807268142705
+    }
+  }
+}
